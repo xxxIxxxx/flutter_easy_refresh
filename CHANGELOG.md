@@ -1,4 +1,5 @@
-## Next
+## 3.3.5
+- fix: Material style performance optimization [#814](https://github.com/xuelongqy/flutter_easy_refresh/issues/814).
 - fix: Issue during build when IndicatorStateListenable rebinds IndicatorNotifier [#607](https://github.com/xuelongqy/flutter_easy_refresh/issues/607).
 
 ## 3.3.4
