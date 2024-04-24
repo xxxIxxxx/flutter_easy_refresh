@@ -393,10 +393,11 @@ abstract class IndicatorNotifier extends ChangeNotifier {
     if (indicator != null) {
       if (indicator.listenable == _indicator.listenable) {
         indicator.listenable?._rebind(this);
-        return;
       } else {
         _indicator.listenable?._unbind();
         indicator.listenable?._bind(this);
+      }
+      if (indicator != _indicator) {
         _indicator = indicator;
       }
     }
