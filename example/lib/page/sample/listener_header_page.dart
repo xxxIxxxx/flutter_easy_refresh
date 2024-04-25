@@ -98,7 +98,7 @@ class _ListenerHeaderPageState extends State<ListenerHeaderPage> {
                       value = math.min(offset / actualTriggerOffset, 1) * 0.75;
                     } else if (mode == IndicatorMode.ready ||
                         mode == IndicatorMode.processing) {
-                      value == null;
+                      value = null;
                     } else {
                       value = 1;
                     }
