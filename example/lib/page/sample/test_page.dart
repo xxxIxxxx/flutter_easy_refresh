@@ -20,7 +20,7 @@ class _TestPageState extends State<TestPage> {
     controlFinishRefresh: true,
   );
 
-  final _scrollController = ScrollController();
+  // final _scrollController = ScrollController();
 
   @override
   void initState() {
@@ -71,7 +71,6 @@ class _TestPageState extends State<TestPage> {
           maxOverOffset: 100,
         ),
         onRefresh: () async {
-          print('Refreshing');
           await Future.delayed(const Duration(seconds: 2));
           if (!mounted) {
             return null;
@@ -79,12 +78,10 @@ class _TestPageState extends State<TestPage> {
           setState(() {
             _count = 10;
           });
-          print('Refreshed');
           _controller.finishRefresh(IndicatorResult.success);
           return IndicatorResult.success;
         },
         onLoad: () async {
-          print('Loading');
           await Future.delayed(const Duration(seconds: 2));
           if (!mounted) {
             return null;
@@ -92,7 +89,6 @@ class _TestPageState extends State<TestPage> {
           setState(() {
             _count += 0;
           });
-          print('Loaded');
           // return IndicatorResult.noMore;
         },
         // child: ListView.builder(
