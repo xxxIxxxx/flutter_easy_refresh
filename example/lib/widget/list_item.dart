@@ -1,6 +1,6 @@
 import 'package:example/util/color_utils.dart';
+import 'package:example/widget/paths_painter.dart';
 import 'package:flutter/material.dart';
-import 'package:easy_refresh/src/painter/paths_painter.dart';
 
 /// List item.
 class ListItem extends StatelessWidget {
