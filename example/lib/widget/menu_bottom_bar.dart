@@ -53,7 +53,7 @@ class _MenuBottomBarState extends State<MenuBottomBar>
       clipBehavior: Clip.antiAlias,
       elevation: 4,
       margin: EdgeInsets.zero,
-      surfaceTintColor: Theme.of(context).bottomAppBarColor,
+      surfaceTintColor: Theme.of(context).bottomAppBarTheme.color,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(32)),
       ),
