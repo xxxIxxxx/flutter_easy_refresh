@@ -117,10 +117,10 @@ class _SecondaryPageState extends State<SecondaryPage> {
                         );
                         if (mode == IndicatorMode.secondaryOpen ||
                             mode == IndicatorMode.secondaryClosing) {
-                          return WillPopScope(
-                            onWillPop: () async {
+                          return PopScope(
+                            canPop: false,
+                            onPopInvoked: (_) {
                               _controller.closeHeaderSecondary();
-                              return false;
                             },
                             child: secondaryPage,
                           );
