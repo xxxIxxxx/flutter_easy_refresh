@@ -1,4 +1,4 @@
-part of easy_refresh;
+part of '../../easy_refresh.dart';
 
 /// The default opening speed of the secondary.
 const kDefaultSecondaryVelocity = 3000.0;

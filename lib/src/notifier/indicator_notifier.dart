@@ -1,6 +1,6 @@
 // ignore_for_file: invalid_use_of_visible_for_testing_member
 
-part of easy_refresh;
+part of '../../easy_refresh.dart';
 
 /// Indicator widget builder.
 typedef CanProcessCallBack = bool Function();

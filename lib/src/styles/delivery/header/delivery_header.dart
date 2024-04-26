@@ -1,4 +1,4 @@
-part of easy_refresh;
+part of '../../../../easy_refresh.dart';
 
 /// Delivery footer.
 /// https://dribbble.com/shots/2753803-Refresh-your-delivery

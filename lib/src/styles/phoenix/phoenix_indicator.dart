@@ -1,4 +1,4 @@
-part of easy_refresh;
+part of '../../../easy_refresh.dart';
 
 /// Bezier indicator.
 /// Base widget for [PhoenixHeader] and [PhoenixFooter].

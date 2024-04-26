@@ -1,4 +1,4 @@
-part of easy_refresh;
+part of '../easy_refresh.dart';
 
 /// EasyRefresh child builder.
 /// Provide [ScrollPhysics], and use it in your [ScrollView].

@@ -1,4 +1,4 @@
-part of easy_refresh;
+part of '../../../easy_refresh.dart';
 
 /// Header indicator.
 abstract class Header extends Indicator {

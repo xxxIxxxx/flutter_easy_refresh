@@ -1,4 +1,4 @@
-part of easy_refresh;
+part of '../../../easy_refresh.dart';
 
 /// Footer indicator.
 abstract class Footer extends Indicator {

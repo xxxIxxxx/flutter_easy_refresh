@@ -1,4 +1,4 @@
-part of easy_refresh;
+part of '../../../easy_refresh.dart';
 
 const double _kDefaultCupertinoIndicatorRadius = 14.0;
 const double _kDefaultWaterDropCupertinoIndicatorRadius = 10.0;

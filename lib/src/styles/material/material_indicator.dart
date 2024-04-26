@@ -1,4 +1,4 @@
-part of easy_refresh;
+part of '../../../easy_refresh.dart';
 
 /// See [ProgressIndicator] _kMinCircularProgressIndicatorSize.
 const double _kCircularProgressIndicatorSize = 48;

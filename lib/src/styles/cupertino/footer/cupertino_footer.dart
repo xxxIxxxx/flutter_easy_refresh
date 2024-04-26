@@ -1,4 +1,4 @@
-part of easy_refresh;
+part of '../../../../easy_refresh.dart';
 
 /// Cupertino footer.
 /// https://github.com/THEONE10211024/WaterDropListView

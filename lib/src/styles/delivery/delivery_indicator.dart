@@ -1,4 +1,4 @@
-part of easy_refresh;
+part of '../../../easy_refresh.dart';
 
 /// Delivery indicator disappear animation duration.
 const kDeliveryDisappearDuration = Duration(milliseconds: 500);

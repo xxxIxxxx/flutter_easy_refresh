@@ -1,4 +1,4 @@
-part of easy_refresh;
+part of '../../easy_refresh.dart';
 
 /// Define [ScrollBehavior] in the scope of EasyRefresh.
 /// Add support for web and PC.

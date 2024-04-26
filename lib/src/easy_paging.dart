@@ -1,4 +1,4 @@
-part of easy_paging;
+part of '../easy_paging.dart';
 
 /// Paging item builder.
 typedef EasyPagingItemBuilder<ItemType> = Widget Function(

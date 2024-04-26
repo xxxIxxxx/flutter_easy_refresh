@@ -1,4 +1,4 @@
-part of easy_refresh;
+part of '../../../easy_refresh.dart';
 
 /// Spring used by bezier curves.
 physics.SpringDescription kBezierSpringBuilder({

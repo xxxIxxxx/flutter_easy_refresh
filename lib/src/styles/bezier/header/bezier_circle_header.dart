@@ -1,4 +1,4 @@
-part of easy_refresh;
+part of '../../../../easy_refresh.dart';
 
 /// Bezier circle footer.
 /// https://dribbble.com/shots/1797373-Pull-Down-To-Refresh

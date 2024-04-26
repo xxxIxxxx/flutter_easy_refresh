@@ -1,4 +1,4 @@
-part of easy_refresh;
+part of '../../../../easy_refresh.dart';
 
 /// Taurus footer.
 /// https://github.com/Yalantis/Taurus

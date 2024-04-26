@@ -1,4 +1,4 @@
-part of easy_refresh;
+part of '../../../easy_refresh.dart';
 
 /// Pull icon widget builder.
 typedef CIPullIconBuilder = Widget Function(

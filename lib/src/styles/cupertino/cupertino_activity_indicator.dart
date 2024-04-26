@@ -1,4 +1,4 @@
-part of easy_refresh;
+part of '../../../easy_refresh.dart';
 
 const double _kDefaultIndicatorRadius = 10.0;
 
