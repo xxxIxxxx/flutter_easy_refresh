@@ -8,7 +8,7 @@ class SkatingHeader extends Header {
     bool clamping = false,
     double triggerOffset = _kDefaultSkatingTriggerOffset,
     IndicatorPosition position = IndicatorPosition.above,
-    SpringDescription? spring,
+    physics.SpringDescription? spring,
     SpringBuilder? readySpringBuilder,
     bool springRebound = false,
     FrictionFactor? frictionFactor,

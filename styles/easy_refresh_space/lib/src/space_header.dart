@@ -9,7 +9,7 @@ class SpaceHeader extends Header {
     double triggerOffset = _kDefaultSpaceTriggerOffset,
     IndicatorPosition position = IndicatorPosition.above,
     Duration processedDuration = Duration.zero,
-    SpringDescription? spring,
+    physics.SpringDescription? spring,
     SpringBuilder? readySpringBuilder,
     bool springRebound = false,
     FrictionFactor? frictionFactor,

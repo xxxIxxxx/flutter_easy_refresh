@@ -9,7 +9,7 @@ class BubblesFooter extends Footer {
     double triggerOffset = _kDefaultBubblesTriggerOffset,
     IndicatorPosition position = IndicatorPosition.above,
     Duration processedDuration = _kBubblesProcessed,
-    SpringDescription? spring,
+    physics.SpringDescription? spring,
     SpringBuilder? readySpringBuilder,
     bool springRebound = false,
     FrictionFactor? frictionFactor,

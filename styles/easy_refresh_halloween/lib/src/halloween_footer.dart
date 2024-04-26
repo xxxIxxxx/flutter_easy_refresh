@@ -9,7 +9,7 @@ class HalloweenFooter extends Footer {
     double triggerOffset = _kDefaultHalloweenTriggerOffset,
     IndicatorPosition position = IndicatorPosition.above,
     Duration processedDuration = Duration.zero,
-    SpringDescription? spring,
+    physics.SpringDescription? spring,
     SpringBuilder? readySpringBuilder,
     bool springRebound = false,
     FrictionFactor? frictionFactor,

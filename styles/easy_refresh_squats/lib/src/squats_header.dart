@@ -12,7 +12,7 @@ class SquatsHeader extends Header {
     double triggerOffset = _kDefaultSquatsTriggerOffset,
     IndicatorPosition position = IndicatorPosition.above,
     Duration processedDuration = Duration.zero,
-    SpringDescription? spring,
+    physics.SpringDescription? spring,
     SpringBuilder? readySpringBuilder,
     bool springRebound = false,
     FrictionFactor? frictionFactor,
