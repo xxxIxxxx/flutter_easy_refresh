@@ -421,20 +421,10 @@ class _ERScrollPhysics extends BouncingScrollPhysics {
     footerNotifier._updateOffset(position, hClamping ? 0 : offset, false);
   }
 
-  /// The tolerance to use for ballistic simulations.
-  Tolerance getTolerance(ScrollMetrics metrics) {
-    try {
-      // This feature after v3.7.0-13.0.pre.
-      return (this as dynamic).toleranceFor(metrics);
-    } catch (_) {
-      return this.tolerance;
-    }
-  }
-
   @override
   Simulation? createBallisticSimulation(
       ScrollMetrics position, double velocity) {
-    Tolerance tolerance = getTolerance(position);
+    Tolerance tolerance = toleranceFor(position);
     // User stopped scrolling.
     final oldUserOffset = userOffsetNotifier.value;
     userOffsetNotifier.value = false;

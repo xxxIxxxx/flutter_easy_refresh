@@ -1,3 +1,6 @@
+## Next
+- breaking: Flutter >=3.7.0, dart >=2.19.0. Remove some unnecessary compatibility, please update the Flutter version in time, or use the previous version.
+
 ## 3.3.5+1
 - fix: Indicator properties cannot be updated [#818](https://github.com/xuelongqy/flutter_easy_refresh/issues/818).
 
