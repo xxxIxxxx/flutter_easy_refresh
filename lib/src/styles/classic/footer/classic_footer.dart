@@ -10,7 +10,11 @@ class ClassicFooter extends Footer {
   final MainAxisAlignment mainAxisAlignment;
 
   /// Background color.
+  /// Ignored if [boxDecoration] is not null.
   final Color? backgroundColor;
+
+  /// Box decoration.
+  final BoxDecoration? boxDecoration;
 
   /// Text on [IndicatorMode.drag].
   final String? dragText;
@@ -110,6 +114,7 @@ class ClassicFooter extends Footer {
     double maxOverOffset = double.infinity,
     this.mainAxisAlignment = MainAxisAlignment.start,
     this.backgroundColor,
+    this.boxDecoration,
     this.dragText,
     this.armedText,
     this.readyText,
@@ -160,6 +165,7 @@ class ClassicFooter extends Footer {
       key: key,
       state: state,
       backgroundColor: backgroundColor,
+      boxDecoration: boxDecoration,
       mainAxisAlignment: mainAxisAlignment,
       dragText: dragText ?? 'Pull to load',
       armedText: armedText ?? 'Release ready',
