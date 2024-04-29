@@ -19,14 +19,14 @@ class HeaderLocator extends StatelessWidget {
     super.key,
     this.paintExtent = 0,
     this.clearExtent = true,
-  })  : _isSliver = false;
+  }) : _isSliver = false;
 
   /// User in Sliver
   const HeaderLocator.sliver({
     super.key,
     this.paintExtent = 0,
     this.clearExtent = true,
-  })  : _isSliver = true;
+  }) : _isSliver = true;
 
   @override
   Widget build(BuildContext context) {

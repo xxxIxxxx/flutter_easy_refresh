@@ -145,7 +145,7 @@ class _ClassicIndicator extends StatefulWidget {
     this.iconTheme,
     this.progressIndicatorSize,
     this.progressIndicatorStrokeWidth,
-  })  : assert(
+  }) : assert(
             mainAxisAlignment == MainAxisAlignment.start ||
                 mainAxisAlignment == MainAxisAlignment.center ||
                 mainAxisAlignment == MainAxisAlignment.end,
