@@ -22,11 +22,11 @@ class _DeliveryIndicator extends StatefulWidget {
   final Color? skyColor;
 
   const _DeliveryIndicator({
-    Key? key,
+    super.key,
     required this.state,
     required this.reverse,
     this.skyColor,
-  }) : super(key: key);
+  });
 
   @override
   State<_DeliveryIndicator> createState() => _DeliveryIndicatorState();

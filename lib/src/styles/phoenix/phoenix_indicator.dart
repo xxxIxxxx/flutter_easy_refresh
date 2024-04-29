@@ -16,11 +16,11 @@ class _PhoenixIndicator extends StatefulWidget {
   final Color? skyColor;
 
   const _PhoenixIndicator({
-    Key? key,
+    super.key,
     required this.state,
     required this.reverse,
     required this.skyColor,
-  }) : super(key: key);
+  });
 
   @override
   State<_PhoenixIndicator> createState() => _PhoenixIndicatorState();

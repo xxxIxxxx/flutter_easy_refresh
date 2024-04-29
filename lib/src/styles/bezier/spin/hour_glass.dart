@@ -4,10 +4,10 @@ part of '../../../../easy_refresh.dart';
 /// flutter_spinkit LICENSE [https://github.com/jogboms/flutter_spinkit/blob/master/LICENSE].
 class _SpinKitHourGlass extends StatefulWidget {
   const _SpinKitHourGlass({
-    Key? key,
+    super.key,
     required this.color,
     this.size = 50.0,
-  }) : super(key: key);
+  });
 
   final Color color;
   final double size;

@@ -25,12 +25,12 @@ class PathsPaint extends StatefulWidget {
   final double? height;
 
   const PathsPaint({
-    Key? key,
+    super.key,
     required this.paths,
     required this.colors,
     this.width,
     this.height,
-  }) : super(key: key);
+  });
 
   @override
   State<PathsPaint> createState() => _PathsPaintState();

@@ -19,11 +19,11 @@ class _TaurusIndicator extends StatefulWidget {
   final Color? skyColor;
 
   const _TaurusIndicator({
-    Key? key,
+    super.key,
     required this.state,
     required this.reverse,
     this.skyColor,
-  }) : super(key: key);
+  });
 
   @override
   State<_TaurusIndicator> createState() => _TaurusIndicatorState();

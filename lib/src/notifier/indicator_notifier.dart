@@ -938,21 +938,17 @@ class _IndicatorListenable<T extends IndicatorNotifier>
 class HeaderNotifier extends IndicatorNotifier {
   HeaderNotifier({
     required Header header,
-    required ValueNotifier<bool> userOffsetNotifier,
-    required TickerProviderStateMixin vsync,
+    required super.userOffsetNotifier,
+    required super.vsync,
     required CanProcessCallBack onCanRefresh,
-    bool canProcessAfterNoMore = false,
+    super.canProcessAfterNoMore = false,
     bool canProcessAfterFail = true,
-    Axis? triggerAxis,
+    super.triggerAxis,
     FutureOr Function()? onRefresh,
     bool waitRefreshResult = true,
   }) : super(
           indicator: header,
-          userOffsetNotifier: userOffsetNotifier,
-          vsync: vsync,
           onCanProcess: onCanRefresh,
-          canProcessAfterNoMore: canProcessAfterNoMore,
-          triggerAxis: triggerAxis,
           task: onRefresh,
           waitTaskResult: waitRefreshResult,
         );
@@ -1093,21 +1089,17 @@ class HeaderNotifier extends IndicatorNotifier {
 class FooterNotifier extends IndicatorNotifier {
   FooterNotifier({
     required Footer footer,
-    required ValueNotifier<bool> userOffsetNotifier,
-    required TickerProviderStateMixin vsync,
+    required super.userOffsetNotifier,
+    required super.vsync,
     required CanProcessCallBack onCanLoad,
-    bool canProcessAfterNoMore = false,
+    super.canProcessAfterNoMore = false,
     bool canProcessAfterFail = true,
-    Axis? triggerAxis,
+    super.triggerAxis,
     FutureOr Function()? onLoad,
     bool waitLoadResult = true,
   }) : super(
           indicator: footer,
-          userOffsetNotifier: userOffsetNotifier,
-          vsync: vsync,
           onCanProcess: onCanLoad,
-          canProcessAfterNoMore: canProcessAfterNoMore,
-          triggerAxis: triggerAxis,
           task: onLoad,
           waitTaskResult: waitLoadResult,
         );
