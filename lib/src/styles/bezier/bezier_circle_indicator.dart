@@ -19,11 +19,11 @@ class _BezierCircleIndicator extends StatefulWidget {
   final Color? backgroundColor;
 
   const _BezierCircleIndicator({
-    Key? key,
+    super.key,
     required this.state,
     this.foregroundColor,
     this.backgroundColor,
-  }) : super(key: key);
+  });
 
   @override
   State<_BezierCircleIndicator> createState() => _BezierCircleIndicatorState();

@@ -32,10 +32,10 @@ class _InheritedEasyRefresh extends InheritedWidget {
   final EasyRefreshData data;
 
   const _InheritedEasyRefresh({
-    Key? key,
+    super.key,
     required this.data,
-    required Widget child,
-  }) : super(key: key, child: child);
+    required super.child,
+  });
 
   @override
   bool updateShouldNotify(covariant _InheritedEasyRefresh oldWidget) =>
@@ -179,7 +179,7 @@ class EasyRefresh extends StatefulWidget {
       ERScrollBehavior(physics);
 
   const EasyRefresh({
-    Key? key,
+    super.key,
     required this.child,
     this.controller,
     this.header,
@@ -207,11 +207,10 @@ class EasyRefresh extends StatefulWidget {
         assert(callRefreshOverOffset > 0,
             'callRefreshOverOffset must be greater than 0.'),
         assert(callLoadOverOffset > 0,
-            'callLoadOverOffset must be greater than 0.'),
-        super(key: key);
+            'callLoadOverOffset must be greater than 0.');
 
   const EasyRefresh.builder({
-    Key? key,
+    super.key,
     required this.childBuilder,
     this.controller,
     this.header,
@@ -239,8 +238,7 @@ class EasyRefresh extends StatefulWidget {
         assert(callRefreshOverOffset > 0,
             'callRefreshOverOffset must be greater than 0.'),
         assert(callLoadOverOffset > 0,
-            'callLoadOverOffset must be greater than 0.'),
-        super(key: key);
+            'callLoadOverOffset must be greater than 0.');
 
   @override
   State<StatefulWidget> createState() => _EasyRefreshState();

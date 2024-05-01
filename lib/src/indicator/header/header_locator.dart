@@ -16,19 +16,17 @@ class HeaderLocator extends StatelessWidget {
 
   /// Use in Box
   const HeaderLocator({
-    Key? key,
+    super.key,
     this.paintExtent = 0,
     this.clearExtent = true,
-  })  : _isSliver = false,
-        super(key: key);
+  }) : _isSliver = false;
 
   /// User in Sliver
   const HeaderLocator.sliver({
-    Key? key,
+    super.key,
     this.paintExtent = 0,
     this.clearExtent = true,
-  })  : _isSliver = true,
-        super(key: key);
+  }) : _isSliver = true;
 
   @override
   Widget build(BuildContext context) {
@@ -78,11 +76,11 @@ class _HeaderLocatorRenderWidget extends SingleChildRenderObjectWidget {
   final double paintExtent;
 
   const _HeaderLocatorRenderWidget({
-    Key? key,
-    required Widget? child,
+    super.key,
+    required super.child,
     required this.isSliver,
     required this.paintExtent,
-  }) : super(key: key, child: child);
+  });
 
   @override
   RenderObject createRenderObject(BuildContext context) => isSliver
@@ -172,8 +170,8 @@ class _HeaderLocatorRenderSliver extends RenderSliverSingleBoxAdapter {
   _HeaderLocatorRenderSliver({
     required this.context,
     required this.paintExtent,
-    RenderBox? child,
-  }) : super(child: child);
+    super.child,
+  });
 
   @override
   void performLayout() {

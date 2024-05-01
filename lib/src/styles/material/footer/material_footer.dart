@@ -39,21 +39,21 @@ class MaterialFooter extends Footer {
 
   const MaterialFooter({
     this.key,
-    double triggerOffset = 100,
-    bool clamping = true,
-    IndicatorPosition position = IndicatorPosition.above,
-    Duration processedDuration = const Duration(milliseconds: 200),
-    physics.SpringDescription? spring,
+    super.triggerOffset = 100,
+    super.clamping = true,
+    super.position,
+    super.processedDuration = const Duration(milliseconds: 200),
+    super.spring,
     SpringBuilder? readySpringBuilder,
-    bool springRebound = false,
+    super.springRebound = false,
     FrictionFactor? frictionFactor,
-    bool safeArea = true,
-    double? infiniteOffset,
-    bool? hitOver,
-    bool? infiniteHitOver,
-    bool hapticFeedback = false,
-    bool triggerWhenRelease = false,
-    double maxOverOffset = double.infinity,
+    super.safeArea,
+    super.infiniteOffset = null,
+    super.hitOver,
+    super.infiniteHitOver,
+    super.hapticFeedback,
+    super.triggerWhenRelease,
+    super.maxOverOffset,
     this.backgroundColor,
     this.color,
     this.valueColor,
@@ -65,15 +65,10 @@ class MaterialFooter extends Footer {
     this.bezierBackgroundAnimation = false,
     this.bezierBackgroundBounce = false,
   }) : super(
-          triggerOffset: triggerOffset,
-          clamping: clamping,
-          processedDuration: processedDuration,
-          spring: spring,
           readySpringBuilder: readySpringBuilder ??
               (bezierBackgroundAnimation
                   ? kBezierSpringBuilder
                   : kMaterialSpringBuilder),
-          springRebound: springRebound,
           frictionFactor: frictionFactor ??
               (showBezierBackground
                   ? kBezierFrictionFactor
@@ -82,14 +77,6 @@ class MaterialFooter extends Footer {
               (showBezierBackground
                   ? kBezierHorizontalFrictionFactor
                   : kMaterialHorizontalFrictionFactor),
-          safeArea: safeArea,
-          infiniteOffset: infiniteOffset,
-          hitOver: hitOver,
-          infiniteHitOver: infiniteHitOver,
-          position: position,
-          hapticFeedback: hapticFeedback,
-          triggerWhenRelease: triggerWhenRelease,
-          maxOverOffset: maxOverOffset,
         );
 
   @override

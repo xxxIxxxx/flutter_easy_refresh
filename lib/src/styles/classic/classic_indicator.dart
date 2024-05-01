@@ -119,7 +119,7 @@ class _ClassicIndicator extends StatefulWidget {
   final double? progressIndicatorStrokeWidth;
 
   const _ClassicIndicator({
-    Key? key,
+    super.key,
     required this.state,
     required this.mainAxisAlignment,
     this.backgroundColor,
@@ -150,12 +150,11 @@ class _ClassicIndicator extends StatefulWidget {
     this.iconTheme,
     this.progressIndicatorSize,
     this.progressIndicatorStrokeWidth,
-  })  : assert(
+  }) : assert(
             mainAxisAlignment == MainAxisAlignment.start ||
                 mainAxisAlignment == MainAxisAlignment.center ||
                 mainAxisAlignment == MainAxisAlignment.end,
-            'Only supports [MainAxisAlignment.center], [MainAxisAlignment.start] and [MainAxisAlignment.end].'),
-        super(key: key);
+            'Only supports [MainAxisAlignment.center], [MainAxisAlignment.start] and [MainAxisAlignment.end].');
 
   @override
   State<_ClassicIndicator> createState() => _ClassicIndicatorState();

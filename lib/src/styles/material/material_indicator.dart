@@ -72,7 +72,7 @@ class _MaterialIndicator extends StatefulWidget {
   final bool bezierBackgroundBounce;
 
   const _MaterialIndicator({
-    Key? key,
+    super.key,
     required this.state,
     required this.disappearDuration,
     required this.reverse,
@@ -86,7 +86,7 @@ class _MaterialIndicator extends StatefulWidget {
     this.bezierBackgroundColor,
     this.bezierBackgroundAnimation = false,
     this.bezierBackgroundBounce = false,
-  }) : super(key: key);
+  });
 
   @override
   State<_MaterialIndicator> createState() => _MaterialIndicatorState();

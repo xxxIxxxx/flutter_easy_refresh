@@ -68,7 +68,7 @@ abstract class EasyPaging<DataType, ItemType> extends StatefulWidget {
   final WidgetBuilder? emptyWidgetBuilder;
 
   const EasyPaging({
-    Key? key,
+    super.key,
     this.useDefaultPhysics = false,
     this.controller,
     this.spring,
@@ -87,7 +87,7 @@ abstract class EasyPaging<DataType, ItemType> extends StatefulWidget {
     this.itemBuilder,
     this.refreshOnStartWidgetBuilder,
     this.emptyWidgetBuilder,
-  }) : super(key: key);
+  });
 
   @override
   EasyPagingState<DataType, ItemType> createState();

@@ -9,15 +9,14 @@ typedef FrictionFactor = double Function(double overscrollFraction);
 /// EasyRefresh scroll physics.
 class _ERScrollPhysics extends BouncingScrollPhysics {
   _ERScrollPhysics({
-    ScrollPhysics? parent = const AlwaysScrollableScrollPhysics(),
+    super.parent = const AlwaysScrollableScrollPhysics(),
     required this.userOffsetNotifier,
     required this.headerNotifier,
     required this.footerNotifier,
     physics.SpringDescription? spring,
     FrictionFactor? frictionFactor,
   })  : _spring = spring,
-        _frictionFactor = frictionFactor,
-        super(parent: parent) {
+        _frictionFactor = frictionFactor {
     headerNotifier._bindPhysics(this);
     footerNotifier._bindPhysics(this);
     _headerSimulationCreationState =

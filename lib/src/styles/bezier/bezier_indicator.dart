@@ -45,7 +45,7 @@ class _BezierIndicator extends StatefulWidget {
   final bool onlySpin;
 
   const _BezierIndicator({
-    Key? key,
+    super.key,
     required this.state,
     required this.reverse,
     required this.processedDuration,
@@ -57,7 +57,7 @@ class _BezierIndicator extends StatefulWidget {
     this.spinBuilder,
     this.foregroundColor,
     this.backgroundColor,
-  }) : super(key: key);
+  });
 
   @override
   State<_BezierIndicator> createState() => _BezierIndicatorState();
