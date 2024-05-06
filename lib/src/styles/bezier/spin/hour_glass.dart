@@ -47,8 +47,8 @@ class _SpinKitHourGlassState extends State<_SpinKitHourGlass>
         transform: Matrix4.identity()..rotateZ((_animation.value) * math.pi),
         alignment: FractionalOffset.center,
         child: CustomPaint(
-          child: SizedBox.fromSize(size: Size.square(widget.size)),
           painter: _HourGlassPainter(weight: 90, color: widget.color),
+          child: SizedBox.fromSize(size: Size.square(widget.size)),
         ),
       ),
     );
