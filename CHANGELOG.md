@@ -1,6 +1,7 @@
 ## Next
 - breaking: Flutter >=3.7.0, dart >=2.19.0. Remove some unnecessary compatibility, please update the Flutter version in time, or use the previous version.
 - fix: Scroll bar adaptation for unknown platforms [#825](https://github.com/xuelongqy/flutter_easy_refresh/issues/825).
+- feat: Add BoxDecoration to ClassicHeader and ClassicFooter, Thanks GiampaoloGabba for [PR#822](https://github.com/xuelongqy/flutter_easy_refresh/pull/822).
 
 ## 3.3.5+1
 - fix: Indicator properties cannot be updated [#818](https://github.com/xuelongqy/flutter_easy_refresh/issues/818).
