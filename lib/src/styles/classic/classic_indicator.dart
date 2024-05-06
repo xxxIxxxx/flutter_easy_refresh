@@ -30,7 +30,11 @@ class _ClassicIndicator extends StatefulWidget {
   final MainAxisAlignment mainAxisAlignment;
 
   /// Background color.
+  /// Ignored if [boxDecoration] is not null.
   final Color? backgroundColor;
+
+  /// Box decoration.
+  final BoxDecoration? boxDecoration;
 
   /// Text on [IndicatorMode.drag].
   final String dragText;
@@ -119,6 +123,7 @@ class _ClassicIndicator extends StatefulWidget {
     required this.state,
     required this.mainAxisAlignment,
     this.backgroundColor,
+    this.boxDecoration,
     required this.dragText,
     required this.armedText,
     required this.readyText,
@@ -525,7 +530,8 @@ class _ClassicIndicatorState extends State<_ClassicIndicator>
       offset = _actualTriggerOffset;
     }
     return Container(
-      color: widget.backgroundColor,
+      color: widget.boxDecoration == null ? widget.backgroundColor : null,
+      decoration: widget.boxDecoration,
       width: _axis == Axis.vertical ? double.infinity : offset,
       height: _axis == Axis.horizontal ? double.infinity : offset,
       child: _axis == Axis.vertical
