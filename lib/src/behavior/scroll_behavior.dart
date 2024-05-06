@@ -37,6 +37,8 @@ class ERScrollBehavior extends ScrollBehavior {
       case TargetPlatform.fuchsia:
       case TargetPlatform.iOS:
         return child;
+      default:
+        return child;
     }
   }
 
