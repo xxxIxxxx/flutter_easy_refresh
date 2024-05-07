@@ -216,7 +216,7 @@ class IndicatorStateListenable extends ValueListenable<IndicatorState?> {
     _indicatorNotifier = indicatorNotifier;
     if (_listeners.isNotEmpty) {
       indicatorNotifier.addListener(_onNotify);
-      _ambiguate(WidgetsBinding.instance)!.addPostFrameCallback((timeStamp) {
+      WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
         _onNotify();
       });
     }

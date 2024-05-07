@@ -142,7 +142,7 @@ abstract class EasyPagingState<DataType, ItemType> extends State<EasyPaging> {
   Future _onRefresh() async {
     final result = await onRefresh();
     if (!_refreshController.controlFinishRefresh && isNoMore) {
-      _ambiguate(WidgetsBinding.instance)!.addPostFrameCallback((timeStamp) {
+      WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
         if (mounted) {
           _refreshController.finishLoad(IndicatorResult.noMore, true);
         }

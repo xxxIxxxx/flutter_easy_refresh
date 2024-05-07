@@ -151,7 +151,7 @@ abstract class IndicatorNotifier extends ChangeNotifier {
     if (value.isNestedOuter) {
       _viewportDimension = value.viewportDimension;
     } else if (value.isNestedInner) {
-      if (_ambiguate(WidgetsBinding.instance)!.schedulerPhase !=
+      if (WidgetsBinding.instance.schedulerPhase !=
           SchedulerPhase.persistentCallbacks) {
         _viewportDimension = value.axis == Axis.vertical
             ? vsync.context.size?.height
@@ -823,7 +823,7 @@ abstract class IndicatorNotifier extends ChangeNotifier {
     if (this.mode == IndicatorMode.processed) {
       // Completion delay
       if (processedDuration == Duration.zero) {
-        _ambiguate(WidgetsBinding.instance)!.addPostFrameCallback((timeStamp) {
+        WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
           if (this.mode == IndicatorMode.processed) {
             _mode = IndicatorMode.done;
             if (offset == 0) {
