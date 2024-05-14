@@ -311,7 +311,8 @@ class _ChatPageState extends State<ChatPage> {
                               borderSide: BorderSide.none,
                             ),
                             filled: true,
-                            fillColor: themeData.colorScheme.surfaceVariant,
+                            fillColor:
+                                themeData.colorScheme.surfaceContainerHighest,
                             prefixIcon: const Icon(Icons.abc),
                             suffixIcon: IconButton(
                               onPressed: () {
