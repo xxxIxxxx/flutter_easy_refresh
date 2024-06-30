@@ -7,7 +7,7 @@ issue_tracker: https://github.com/xuelongqy/flutter_easy_refresh/issues
 
 environment:
   sdk: ">=2.19.0 <4.0.0"
-  flutter: ">=3.7.0"
+  flutter: ">=3.10.0"
 
 dependencies:
   flutter:
