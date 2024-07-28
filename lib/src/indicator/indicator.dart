@@ -193,6 +193,11 @@ class IndicatorState {
       axisDirection.hashCode ^
       viewportDimension.hashCode ^
       actualTriggerOffset.hashCode;
+
+  @override
+  String toString() {
+    return 'IndicatorState{indicator: $indicator, notifier: $notifier, userOffsetNotifier: $userOffsetNotifier, mode: $mode, result: $result, offset: $offset, safeOffset: $safeOffset, axis: $axis, axisDirection: $axisDirection, viewportDimension: $viewportDimension, actualTriggerOffset: $actualTriggerOffset}';
+  }
 }
 
 /// Indicator widget builder.

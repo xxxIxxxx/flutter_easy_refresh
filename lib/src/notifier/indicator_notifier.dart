@@ -147,15 +147,22 @@ abstract class IndicatorNotifier extends ChangeNotifier {
   /// The current scroll position.
   ScrollMetrics get position => _position!;
 
+  /// Handling NestedScrollView
+  bool _isNested = false;
+
+  bool get isNested => _isNested;
+
   set position(ScrollMetrics value) {
-    if (value.isNestedOuter) {
-      _viewportDimension = value.viewportDimension;
-    } else if (value.isNestedInner) {
-      if (WidgetsBinding.instance.schedulerPhase !=
-          SchedulerPhase.persistentCallbacks) {
-        _viewportDimension = value.axis == Axis.vertical
-            ? vsync.context.size?.height
-            : vsync.context.size?.width;
+    if (_isNested) {
+      if (value.isNestedOuter) {
+        _viewportDimension = value.viewportDimension;
+      } else if (value.isNestedInner) {
+        if (WidgetsBinding.instance.schedulerPhase !=
+            SchedulerPhase.persistentCallbacks) {
+          _viewportDimension = value.axis == Axis.vertical
+              ? vsync.context.size?.height
+              : vsync.context.size?.width;
+        }
       }
     } else {
       _viewportDimension = null;
@@ -389,6 +396,7 @@ abstract class IndicatorNotifier extends ChangeNotifier {
     Axis? triggerAxis,
     FutureOr Function()? task,
     bool? waitTaskRefresh,
+    bool? isNested,
   }) {
     if (indicator != null) {
       if (indicator.listenable == _indicator.listenable) {
@@ -411,6 +419,9 @@ abstract class IndicatorNotifier extends ChangeNotifier {
       _clampingAnimationController?.stop();
       _clampingAnimationController?.dispose();
       _clampingAnimationController = null;
+    }
+    if (isNested != null) {
+      _isNested = isNested;
     }
     notifyListeners();
   }
@@ -548,7 +559,8 @@ abstract class IndicatorNotifier extends ChangeNotifier {
       if (_mode == IndicatorMode.done ||
           // Handling infinite scroll
           (infiniteOffset != null &&
-              (!position.isNestedOuter && edgeOffset < infiniteOffset!) &&
+              (!(_isNested && position.isNestedOuter) &&
+                  edgeOffset < infiniteOffset!) &&
               !bySimulation &&
               !_infiniteExclude(position, value))) {
         // Update mode
@@ -616,7 +628,8 @@ abstract class IndicatorNotifier extends ChangeNotifier {
       }
       // Infinite scroll
       if (infiniteOffset != null &&
-          (!position.isNestedOuter && edgeOffset < infiniteOffset!)) {
+          (!(_isNested && position.isNestedOuter) &&
+              edgeOffset < infiniteOffset!)) {
         if (_mode == IndicatorMode.done &&
             position.maxScrollExtent != position.minScrollExtent) {
           if ((_result == IndicatorResult.fail ||

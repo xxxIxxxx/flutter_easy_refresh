@@ -159,7 +159,7 @@ class _ERScrollPhysics extends BouncingScrollPhysics {
 
     // Scrollable viewport dimension;
     double viewportDimension = position.viewportDimension;
-    if (position.isNestedInner) {
+    if ((headerNotifier.isNested && position.isNestedInner)) {
       if (headerNotifier._viewportDimension != null) {
         viewportDimension = headerNotifier._viewportDimension!;
       } else {
@@ -408,7 +408,8 @@ class _ERScrollPhysics extends BouncingScrollPhysics {
   void _updateIndicatorOffset(
       ScrollMetrics position, double offset, double value) {
     // NestedScrollView special handling.
-    if (position.isNestedOuter &&
+    if (headerNotifier.isNested &&
+        position.isNestedOuter &&
         headerNotifier._offset > 0 &&
         value > position.minScrollExtent &&
         !headerNotifier.modeLocked) {

@@ -136,7 +136,7 @@ class EasyRefresh extends StatefulWidget {
   /// See [Stack.clipBehavior].
   final Clip clipBehavior;
 
-  /// use [ERScrollBehavior] by default.
+  /// Use [ERScrollBehavior] by default.
   ///
   /// example:
   /// ```dart
@@ -156,6 +156,13 @@ class EasyRefresh extends StatefulWidget {
   /// Direction of execution.
   /// Other scroll directions will not show indicators and perform task.
   final Axis? triggerAxis;
+
+  /// Use false by default.
+  /// When true, EasyRefresh handles NestedScrollView.
+  /// In versions 3.4.0 and earlier, no setting is required.
+  /// Because of automatic judgment, it will add burden to scenes that do not
+  /// need NestedScrollView.
+  final bool isNested;
 
   /// Default header indicator.
   static Header Function() defaultHeaderBuilder = _defaultHeaderBuilder;
@@ -203,6 +210,7 @@ class EasyRefresh extends StatefulWidget {
     this.scrollBehaviorBuilder,
     this.scrollController,
     this.triggerAxis,
+    this.isNested = false,
   })  : childBuilder = null,
         assert(callRefreshOverOffset > 0,
             'callRefreshOverOffset must be greater than 0.'),
@@ -234,6 +242,7 @@ class EasyRefresh extends StatefulWidget {
     this.scrollBehaviorBuilder,
     this.scrollController,
     this.triggerAxis,
+    this.isNested = false,
   })  : child = null,
         assert(callRefreshOverOffset > 0,
             'callRefreshOverOffset must be greater than 0.'),
@@ -361,6 +370,7 @@ class _EasyRefreshState extends State<EasyRefresh>
       triggerAxis: widget.triggerAxis,
       task: _onRefresh,
       waitTaskRefresh: _waitRefreshResult,
+      isNested: widget.isNested,
     );
     _footerNotifier._update(
       indicator: _footer,
@@ -368,6 +378,7 @@ class _EasyRefreshState extends State<EasyRefresh>
       triggerAxis: widget.triggerAxis,
       task: widget.onLoad,
       waitTaskRefresh: _waitLoadResult,
+      isNested: widget.isNested,
     );
     // Update controller.
     if (widget.controller != null &&

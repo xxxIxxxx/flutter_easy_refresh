@@ -38,6 +38,7 @@ class TabBarViewPageState extends State<TabBarViewPage>
     final themeData = Theme.of(context);
     return Scaffold(
       body: EasyRefresh.builder(
+        isNested: true,
         header: ClassicHeader(
           clamping: true,
           position: IndicatorPosition.locator,
