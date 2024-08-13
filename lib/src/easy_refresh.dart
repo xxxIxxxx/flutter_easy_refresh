@@ -406,6 +406,7 @@ class _EasyRefreshState extends State<EasyRefresh>
         vsync: this,
         onRefresh: _onRefresh,
         canProcessAfterNoMore: widget.canRefreshAfterNoMore,
+        isNested: widget.isNested,
         triggerAxis: widget.triggerAxis,
         waitRefreshResult: _waitRefreshResult,
         onCanRefresh: () {
@@ -422,6 +423,7 @@ class _EasyRefreshState extends State<EasyRefresh>
         vsync: this,
         onLoad: widget.onLoad,
         canProcessAfterNoMore: widget.canLoadAfterNoMore,
+        isNested: widget.isNested,
         triggerAxis: widget.triggerAxis,
         waitLoadResult: _waitLoadResult,
         onCanLoad: () {
