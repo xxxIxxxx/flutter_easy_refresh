@@ -41,12 +41,14 @@ abstract class IndicatorNotifier extends ChangeNotifier {
     required this.userOffsetNotifier,
     required CanProcessCallBack onCanProcess,
     required bool canProcessAfterNoMore,
+    required bool isNested,
     Axis? triggerAxis,
     bool waitTaskResult = true,
     FutureOr Function()? task,
   })  : _indicator = indicator,
         _onCanProcess = onCanProcess,
         _canProcessAfterNoMore = canProcessAfterNoMore,
+        _isNested = isNested,
         _triggerAxis = triggerAxis,
         _waitTaskResult = waitTaskResult,
         _task = task {
@@ -148,7 +150,7 @@ abstract class IndicatorNotifier extends ChangeNotifier {
   ScrollMetrics get position => _position!;
 
   /// Handling NestedScrollView
-  bool _isNested = false;
+  bool _isNested;
 
   bool get isNested => _isNested;
 
@@ -955,6 +957,7 @@ class HeaderNotifier extends IndicatorNotifier {
     required super.vsync,
     required CanProcessCallBack onCanRefresh,
     super.canProcessAfterNoMore = false,
+    super.isNested = false,
     bool canProcessAfterFail = true,
     super.triggerAxis,
     FutureOr Function()? onRefresh,
@@ -1106,6 +1109,7 @@ class FooterNotifier extends IndicatorNotifier {
     required super.vsync,
     required CanProcessCallBack onCanLoad,
     super.canProcessAfterNoMore = false,
+    super.isNested = false,
     bool canProcessAfterFail = true,
     super.triggerAxis,
     FutureOr Function()? onLoad,
