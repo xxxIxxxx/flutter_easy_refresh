@@ -95,6 +95,8 @@ class EasyRefresh extends StatefulWidget {
   /// the return value is invalid.
   final FutureOr Function()? onLoad;
 
+  final ScrollPositionCallback? onScroll;
+
   /// Structure that describes a spring's constants.
   /// When spring is not set in [Header] and [Footer].
   final physics.SpringDescription? spring;
@@ -193,6 +195,7 @@ class EasyRefresh extends StatefulWidget {
     this.footer,
     this.onRefresh,
     this.onLoad,
+    this.onScroll,
     this.spring,
     this.frictionFactor,
     this.notRefreshHeader,
@@ -225,6 +228,7 @@ class EasyRefresh extends StatefulWidget {
     this.footer,
     this.onRefresh,
     this.onLoad,
+    this.onScroll,
     this.spring,
     this.frictionFactor,
     this.notRefreshHeader,
@@ -405,6 +409,7 @@ class _EasyRefreshState extends State<EasyRefresh>
         userOffsetNotifier: userOffsetNotifier,
         vsync: this,
         onRefresh: _onRefresh,
+        onScroll: widget.onScroll,
         canProcessAfterNoMore: widget.canRefreshAfterNoMore,
         isNested: widget.isNested,
         triggerAxis: widget.triggerAxis,
@@ -422,6 +427,7 @@ class _EasyRefreshState extends State<EasyRefresh>
         userOffsetNotifier: userOffsetNotifier,
         vsync: this,
         onLoad: widget.onLoad,
+        onScroll: widget.onScroll,
         canProcessAfterNoMore: widget.canLoadAfterNoMore,
         isNested: widget.isNested,
         triggerAxis: widget.triggerAxis,

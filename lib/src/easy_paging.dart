@@ -252,6 +252,8 @@ abstract class EasyPagingState<DataType, ItemType> extends State<EasyPaging> {
     return widget.itemBuilder!(context, index, item);
   }
 
+  ScrollPositionCallback _onScroll = (ScrollMetrics position) {};
+
   @override
   Widget build(BuildContext context) {
     final header = buildHeader();
@@ -311,6 +313,7 @@ abstract class EasyPagingState<DataType, ItemType> extends State<EasyPaging> {
       refreshOnStartHeader: startHeader,
       onRefresh: _onRefresh,
       onLoad: _onLoad,
+      onScroll: _onScroll,
       controller: _refreshController,
       spring: widget.spring,
       frictionFactor: widget.frictionFactor,

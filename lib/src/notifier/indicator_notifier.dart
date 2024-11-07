@@ -8,6 +8,9 @@ typedef CanProcessCallBack = bool Function();
 /// Mode change listener.
 typedef ModeChangeListener = void Function(IndicatorMode mode, double offset);
 
+typedef ScrollPositionCallback = void Function(ScrollMetrics position);
+
+
 /// Indicator data and trigger notification.
 abstract class IndicatorNotifier extends ChangeNotifier {
   /// Refresh and loading Indicator.
@@ -42,6 +45,7 @@ abstract class IndicatorNotifier extends ChangeNotifier {
     required CanProcessCallBack onCanProcess,
     required bool canProcessAfterNoMore,
     required bool isNested,
+    this.onScroll,
     Axis? triggerAxis,
     bool waitTaskResult = true,
     FutureOr Function()? task,
@@ -536,6 +540,9 @@ abstract class IndicatorNotifier extends ChangeNotifier {
     }
   }
 
+  /// 滑动回调 block
+  final ScrollPositionCallback? onScroll;
+
   /// Update [Scrollable] offset
   void _updateOffset(ScrollMetrics position, double value, bool bySimulation) {
     // Clamping
@@ -555,6 +562,9 @@ abstract class IndicatorNotifier extends ChangeNotifier {
     final oldMode = _mode;
     // Calculate and update the offset.
     _offset = _calculateOffset(position, value);
+
+    onScroll?.call(position);
+    
     _slightDeviation();
     // Do nothing if not out of bounds.
     if (oldOffset == 0 && _offset == 0) {
@@ -962,6 +972,7 @@ class HeaderNotifier extends IndicatorNotifier {
     super.triggerAxis,
     FutureOr Function()? onRefresh,
     bool waitRefreshResult = true,
+    super.onScroll,
   }) : super(
           indicator: header,
           onCanProcess: onCanRefresh,
@@ -1114,6 +1125,7 @@ class FooterNotifier extends IndicatorNotifier {
     super.triggerAxis,
     FutureOr Function()? onLoad,
     bool waitLoadResult = true,
+    super.onScroll,
   }) : super(
           indicator: footer,
           onCanProcess: onCanLoad,
